@@ -1,34 +1,46 @@
 document.getElementById('Num').focus()
 	
-function Tbd(){
-		let NumInsert = (document.getElementById('Num').value)
-		let Tabuada = document.getElementById('list-container')
-		let Multi = 1
+//Função para gerar Tabuada
+function ShowTabuada(){
+	let NumInsert = (document.getElementById('Num').value)
+	let Tabuada = document.getElementById('list-container')
+	let Multi = 1
 
-		if(NumInsert.length == 0){
-			alert('[ERRO] Insira um valor') //tratamento de erros
-		}else{
+	if(NumInsert.length == 0){
+		alert('[ERRO] Insira um valor') //tratamento de erros
+		Tabuada.innerHTML = `Não foi possivel calcular :/`
+	}else{
+		document.getElementById('list-container').innerText = ` ` //Limpa a operação anetrior
 
-			for(var i = Multi; i <= 10; i++){
-				
-				Tabuada.innerHTML += `${NumInsert} X ${i} = ${NumInsert*i}<br>`
-				
-				Tabuada.style.backgroundColor = 'white'
-				Tabuada.style.border = 'solid 2px' 
-				Tabuada.style.marginLeft = '90px'					//estilo da tabuada
-				Tabuada.style.marginRight = '90px'
-				Tabuada.style.paddingBottom = '100px'
-				Tabuada.style.padding = '8px'
-		
-			}
+		for(Multi;Multi<=10;Multi++){
+			Tabuada.innerHTML += `${NumInsert} X ${Multi} = ${NumInsert*Multi} <br>`
+			
+			//estilo da Tabuada
+			Tabuada.style.fontSize = '1.5em'
+			Tabuada.style.backgroundColor = 'white'
+			Tabuada.style.border = 'black 2px solid'
+			Tabuada.style.borderRadius = '0.5em'
+		}
+	}
+}	
 
-		}	
-}
-function m(){
+//Caso o usuario apertar a tecla Enter, a função "ShowTabuada()" Será acionada
+addEventListener('keydown',()=>{
+	if(event.key == 'Enter'){
+		return ShowTabuada()
+	}
+})
+	
+//Função Para Limpar a tabela	
+function ClearTabuada(){
 	alert('Dados Apagados')
-	document.getElementById('list-container').innerText = ` `
-	document.getElementById('list-container').style.backgroundColor = 'rgba(255, 255, 255, 0.001)' 
-	document.getElementById('list-container').style.border = 'none'					//Limpa os resultados
-	document.getElementById('Num').value = ` ` 
-	document.getElementById('Num').focus()	
+
+	const lista = document.getElementById('list-container')
+	const input = document.getElementById('Num')
+	
+	lista.innerText = ` `
+	lista.style.backgroundColor = 'rgba(255, 255, 255, 0.001)' 
+	lista.style.border = 'none'					//Limpa os resultados
+	input.value = ` ` 
+	input.focus()	
 }
