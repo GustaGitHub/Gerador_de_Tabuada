@@ -29,12 +29,19 @@ body{
 	color: whitesmoke;
 	font-variant: small-caps;
 }
+
+#list-container{
+	font-size: 1.7em;
+	background-color: white;
+}
+
 @media (max-width: 575.98px) { 
 	#Num{
 		width: 90px;
 		margin-bottom: 3px;
 	}
-	body{
-		background-color: red;
+	#list-container{
+		font-size: 1em;
+		background-color: white;
 	}
 }

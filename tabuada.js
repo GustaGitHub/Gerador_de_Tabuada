@@ -16,8 +16,7 @@ function ShowTabuada(){
 			Tabuada.innerHTML += `${NumInsert} X ${Multi} = ${NumInsert*Multi} <br>`
 			
 			//estilo da Tabuada
-			Tabuada.style.fontSize = '1.5em'
-			Tabuada.style.backgroundColor = 'white'
+
 			Tabuada.style.border = 'black 2px solid'
 			Tabuada.style.borderRadius = '0.5em'
 		}
