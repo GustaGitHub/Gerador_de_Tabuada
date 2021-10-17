@@ -29,3 +29,12 @@ body{
 	color: whitesmoke;
 	font-variant: small-caps;
 }
+@media (max-width: 575.98px) { 
+	#Num{
+		width: 90px;
+		margin-bottom: 3px;
+	}
+	body{
+		background-color: red;
+	}
+}
